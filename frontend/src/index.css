@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #e6e9e2;
+  --color-ink: #23262b;
+  --color-paper: #fafaf7;
+  --color-cobalt: #2f5bea;
+  --color-tomato: #e5533d;
+  --color-sunflower: #f2b632;
+  --color-sage: #9db59a;
+  --font-sans: "Familjen Grotesk", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s;
+}
+
+.chip:hover:not(:disabled) {
+  background-color: rgb(35 38 43 / 0.08);
+}
+
+.chip:disabled {
+  opacity: 0.35;
+}
